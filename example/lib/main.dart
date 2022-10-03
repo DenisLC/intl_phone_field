@@ -49,11 +49,13 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 IntlPhoneField(
+                  buildCounter: counterPanel,
+                  initialCountryCode: 'FR',
                   decoration: InputDecoration(
-                    labelText: 'Phone Number',
+                    labelText: 'Numéro de téléphone',
                     border: OutlineInputBorder(
                       borderSide: BorderSide(),
                     ),
@@ -69,7 +71,7 @@ class _MyAppState extends State<MyApp> {
                   height: 10,
                 ),
                 MaterialButton(
-                  child: Text('Submit'),
+                  child: Text('Valider'),
                   color: Theme.of(context).primaryColor,
                   textColor: Colors.white,
                   onPressed: () {
@@ -83,4 +85,13 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
+}
+
+Widget? counterPanel(
+  BuildContext context, {
+  required int currentLength,
+  required bool isFocused,
+  required int? maxLength,
+}) {
+  return null;
 }
