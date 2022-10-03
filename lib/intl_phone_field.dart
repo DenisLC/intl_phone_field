@@ -242,9 +242,12 @@ class IntlPhoneField extends StatefulWidget {
       required bool isFocused,
       required int? maxLength})? buildCounter;
 
+  final Color? barrierColor;
+
   IntlPhoneField({
     Key? key,
     this.buildCounter,
+    this.barrierColor,
     this.initialCountryCode,
     this.obscureText = false,
     this.textAlign = TextAlign.left,
@@ -358,6 +361,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
   Future<void> _changeCountry() async {
     filteredCountries = _countryList;
     await showDialog(
+      barrierColor: widget.barrierColor,
       context: context,
       useRootNavigator: false,
       builder: (context) => StatefulBuilder(
